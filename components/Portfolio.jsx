@@ -6,30 +6,32 @@ import Coin from "./Coin";
 const Portfolio = () => {
   return (
     <Wrapper>
-      <PortfolioTable>
-        <TableItem>
-          <Title>Your Assets</Title>
-        </TableItem>
-        <Divider />
-        <Table>
+      <Content>
+        <PortfolioTable>
           <TableItem>
-            <TableRow>
-              <div style={{ flex: 3 }}>Name</div>
-              <div style={{ flex: 2 }}>Balance</div>
-              <div style={{ flex: 1 }}>Price</div>
-              <div style={{ flex: 1 }}>Allocation</div>
-              <div><BsThreeDotsVertical /></div>
-            </TableRow>
+            <Title>Your Assets</Title>
           </TableItem>
           <Divider />
-          {coins.map((coin, index) => (
-            <div key={index}>
-              <Coin coin={coin} />
-              <Divider />
-            </div>
-          ))}
-        </Table>
-      </PortfolioTable>
+          <Table>
+            <TableItem>
+              <TableRow>
+                <div style={{ flex: 3 }}>Name</div>
+                <div style={{ flex: 2 }}>Balance</div>
+                <div style={{ flex: 1 }}>Price</div>
+                <div style={{ flex: 1 }}>Allocation</div>
+                <div><BsThreeDotsVertical /></div>
+              </TableRow>
+            </TableItem>
+            <Divider />
+            {coins.map((coin, index) => (
+              <div key={index}>
+                <Coin coin={coin} />
+                <Divider />
+              </div>
+            ))}
+          </Table>
+        </PortfolioTable>
+      </Content>
     </Wrapper>
   )
 };
